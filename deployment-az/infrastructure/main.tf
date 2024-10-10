@@ -33,7 +33,7 @@ resource "previder_kubernetes_cluster" "cluster" {
   cni                          = var.kubernetes_cluster_cni
   network                      = previder_virtual_network.network[0].id
   vips                         = var.kubernetes_cluster_vips
-  endpoints = [previder_virtual_firewall.firewall[0].wan_address[0]]
+  endpoints                    = [previder_virtual_firewall.firewall[0].wan_address[0]]
   version                      = var.kubernetes_cluster_version
   auto_update                  = var.kubernetes_cluster_auto_update
   auto_scale_enabled           = var.kubernetes_cluster_auto_scale_enabled
@@ -49,7 +49,7 @@ resource "previder_kubernetes_cluster" "cluster" {
 }
 
 resource previder_staas_environment "staas" {
-  count = previder_virtual_network.network[0].type == "VLAN" && var.staas_environment_enabled ? 1 : 0
+  count   = previder_virtual_network.network[0].type == "VLAN" && var.staas_environment_enabled ? 1 : 0
   name    = var.staas_environment_name
   type    = var.staas_environment_type
   cluster = var.staas_environment_cluster_id
