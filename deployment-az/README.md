@@ -2,7 +2,7 @@
 
 Using the [Previder Terraform Provider](https://github.com/previder/terraform-provider-previder), deployments can be configured as Infrastructure as Code. This makes your setup scalable and you can manage your resources easy via GitOps.
 
-Our provider is published on both the OpenTofu and Terraform registries. This enables the ease of using the code from any devoce anywhere without any programming skills or building binaries local on your system.
+Our provider is published on both the OpenTofu and Terraform registries. This enables the ease of using the code from any device anywhere without any programming skills or building binaries local on your system.
 
 This manifest will deploy a maximum of 4 resources:
 - Virtual Network `virtual-network`
@@ -19,7 +19,7 @@ This manifest will deploy a maximum of 4 resources:
   - 1 Network linked to `virtual-network`
 
 ## OpenTofu vs Terraform
-Both tools should work, but there are some differences. The main difference is the license structure. Sinds OpenTofu 1.8, they started to implement long awaited features like state encryption.
+Both tools should work, but there are some differences. The main difference is the license structure. Since OpenTofu 1.8, they started to implement long awaited features like state encryption.
 
 A good overview has been described on a SpaceLift blog: [OpenTofu vs Terraform : Key Differences and Comparison](https://spacelift.io/blog/opentofu-vs-terraform)
 
@@ -30,5 +30,5 @@ In the provider.tf file, update your token, or use the PREVIDER_TOKEN environmen
 
 To use Previder STaaS, the network type must be VLAN. If this type has not been selected, then the storage configuration is ignored completely.
 
-After the creation, the kubeconfig can be found via the command `tofu output kubeconfig`. Using this config, you can create your own `storage class` to get storage in the cluster.
+After creation, the kubeconfig can be found using the command `tofu output kubeconfig`. Using this config, you can create your own `storage class` to get storage in the cluster.
 See our [Kubernetes Examples repository](https://github.com/previder/kubernetes-examples) for more information.
